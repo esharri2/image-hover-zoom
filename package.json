@@ -1,14 +1,14 @@
 {
-  "name": "@esharri2/img-hover-zoom",
+  "name": "@esharri2/image-hover-zoom",
   "version": "1.0.0",
   "description": "A web component for adding zoom-on-hover to an image",
-  "main": "img-hover-zoom.js",
+  "main": "image-hover-zoom.js",
   "scripts": {
     "start": "npx http-server ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/esharri2/img-hover-zoom.git"
+    "url": "git+https://github.com/esharri2/image-hover-zoom.git"
   },
   "keywords": [
     "web",
@@ -22,12 +22,12 @@
     "access": "public"
   },
   "bugs": {
-    "url": "https://github.com/daviddarnes/img-hover-zoom/issues"
+    "url": "https://github.com/daviddarnes/image-hover-zoom/issues"
   },
   "author": {
     "name": "Evan Harrison",
     "email": "esharri2@gmail.com",
     "url": "https://evan-harrison.com/"
   },
-  "homepage": "https://github.com/daviddarnes/img-hover-zoom#readme"
+  "homepage": "https://github.com/daviddarnes/image-hover-zoom#readme"
 }
