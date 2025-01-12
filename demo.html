@@ -5,35 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Demo of image-hover-zoom Web Component" />
     <title>image-hover-zoom Web Component Demo</title>
-
     <script type="module" src="image-hover-zoom.js"></script>
+    <style>
+      image-hover-zoom {
+        display: block;
+        margin: 0 auto;
+        width: 700px;
+      }
+      /* img {
+        transform: scale(2);
+        transform-origin: 0 0;
+      } */
+    </style>
   </head>
   <body>
     <h2>General usage example</h2>
     <image-hover-zoom>
-      <button>Button</button>
+      <img
+        srcset="
+          https://picsum.photos/id/237/400/400    400w,
+          https://picsum.photos/id/237/800/800    800w,
+          https://picsum.photos/id/237/1200/1200 1200w
+        "
+        sizes="100vw"
+        height="400"
+        width="400"
+      />
     </image-hover-zoom>
-    <hr />
-    <h2>Example using a fallback method</h2>
-    <image-hover-zoom>
-      <button>Button</button>
-      <a href="#">Anchor</a>
-    </image-hover-zoom>
-    <style>
-      image-hover-zoom:not(:defined) button,
-      image-hover-zoom:defined a {
-        display: none;
-      }
-    </style>
-    <hr />
-    <h2>Example using options or additional fallback method</h2>
-    <image-hover-zoom attribute="value">
-      <button>Button</button>
-    </image-hover-zoom>
-    <style>
-      image-hover-zoom[attribute="value"] {
-        outline: 1px solid red;
-      }
-    </style>
+    <div>I am aslo a div</div>
   </body>
 </html>
