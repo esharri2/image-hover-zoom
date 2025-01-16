@@ -10,28 +10,58 @@
       image-hover-zoom {
         display: block;
         margin: 0 auto;
-        width: 700px;
       }
-      /* img {
-        transform: scale(2);
-        transform-origin: 0 0;
-      } */
     </style>
   </head>
   <body>
     <h2>General usage example</h2>
-    <image-hover-zoom>
-      <img
-        srcset="
+    <section>
+      <h3>Example A</h3>
+      <image-hover-zoom>
+        <img
+          srcset="
           https://picsum.photos/id/237/400/400    400w,
           https://picsum.photos/id/237/800/800    800w,
           https://picsum.photos/id/237/1200/1200 1200w
+          https://picsum.photos/id/237/2000/2000 2000w
         "
-        sizes="100vw"
-        height="400"
-        width="400"
-      />
-    </image-hover-zoom>
-    <div>I am aslo a div</div>
+          sizes="100vw"
+          height="400"
+          width="400"
+        />
+      </image-hover-zoom>
+    </section>
+    <section>
+      <h3>Example B</h3>
+      <image-hover-zoom
+        data-scale="4"
+        data-label="Test label"
+        data-key-distance="5"
+      >
+        <img
+          srcset="
+            https://picsum.photos/id/231/600/300   600w,
+            https://picsum.photos/id/231/1200/600 1200w
+          "
+          sizes="400px"
+          height="300"
+          width="600"
+        />
+      </image-hover-zoom>
+    </section>
+    <section>
+      <h3>Example C</h3>
+      <image-hover-zoom data-scale="1.5">
+        <img
+          srcset="
+            https://picsum.photos/id/230/600/300   600w,
+            https://picsum.photos/id/230/1200/600 1200w
+            https://picsum.photos/id/230/1600/800 1600w
+
+          "
+          style="width: 100%; height: auto"
+        />
+      </image-hover-zoom>
+    </section>
   </body>
 </html>
