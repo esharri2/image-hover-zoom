@@ -1,16 +1,4 @@
-/* TODO
-  - zoom transition - maybe need to use JS / web animation to scale to prevent jank (i.e. animate, then listen for move)?
-  */
-
 class ImageHoverZoom extends HTMLElement {
-  constructor() {
-    super();
-    this.frame = document.createElement("div");
-    this.frame.append(document.createElement("slot"));
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.append(this.frame);
-  }
-
   static register(tagName) {
     customElements.define(tagName || "image-hover-zoom", ImageHoverZoom);
   }
@@ -19,6 +7,12 @@ class ImageHoverZoom extends HTMLElement {
   #pointerY = 0;
 
   connectedCallback() {
+    /* Add and update Shadow DOM */
+    this.frame = document.createElement("div");
+    this.frame.append(document.createElement("slot"));
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.append(this.frame);
+
     /*  Accessibility features */
     this.tabIndex = "0";
     this.role = "figure";
@@ -41,9 +35,7 @@ class ImageHoverZoom extends HTMLElement {
     /* Values */
     this.scale = Number(this.dataset.scale) || 2;
     this.keyDistance = Number(this.dataset.keyDistance) || 30;
-    this.img = this.children[0];
-    this.#pointerX = 0;
-    this.#pointerY = 0;
+    this.img = this.querySelector("img");
 
     /* Init functions */
     this.bindEvents();
@@ -145,50 +137,29 @@ class ImageHoverZoom extends HTMLElement {
       arrowKeyHandler();
       this.scrollFrame();
     }
-
-    // switch (e.key) {
-    //   case "ArrowDown":
-    //     e.preventDefault();
-    //     this.#pointerY = Math.min(
-    //       frameHeight,
-    //       this.#pointerY + this.keyDistance
-    //     );
-    //     this.scrollFrame();
-    //     break;
-    //   case "ArrowUp":
-    //     e.preventDefault();
-    //     this.#pointerY = Math.max(0, this.#pointerY - this.keyDistance);
-    //     this.scrollFrame();
-    //     break;
-    //   case "ArrowRight":
-    //     this.#pointerX = Math.min(
-    //       frameWidth,
-    //       this.#pointerX + this.keyDistance
-    //     );
-    //     this.scrollFrame();
-    //     break;
-    //   case "ArrowLeft":
-    //     this.#pointerX = Math.max(0, this.#pointerX - this.keyDistance);
-    //     this.scrollFrame();
-    //     break;
-    //   default:
-    //     return;
-    // }
   }
 
   zoom() {
-    // this.img.style.transform = `scale(${this.scale})`;
+    if (this.dataset.src) {
+      this.originalSrc = this.img.currentSrc;
+      this.originalSrcset = this.img.getAttribute("srcset");
+      this.img.setAttribute("src", this.dataset.src);
+      this.img.removeAttribute("srcset");
+    }
+    this.img.style.transform = `scale(${this.scale})`;
     this.img.style.transformOrigin = "0 0";
-    this.animation = this.img.animate([{ transform: `scale(${this.scale})` }], {
-      fill: "forwards",
-      duration: 500,
-      iterations: 1,
-    });
   }
 
   unzoom() {
-    this.animation.cancel();
-    // this.img.style.removeProperty("transform");
+    if (this.originalSrc) {
+      this.img.setAttribute("src", this.originalSrc);
+    }
+
+    if (this.originalSrcset) {
+      this.img.setAttribute("srcset", this.originalSrcset);
+    }
+
+    this.img.style.removeProperty("transform");
     this.img.style.removeProperty("transformOrigin");
   }
 }
