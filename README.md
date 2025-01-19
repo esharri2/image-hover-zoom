@@ -47,3 +47,8 @@ This web component allows you to:
 | Label        | `data-label`        | Provides an `aria-label` on the custom element (since the element can gain focus) | Use your mouse, touch, or arrow keys to zoom in on an area of the image. | Yes      |
 | Scale        | `data-scale`        | Controls how much the image is zoomed                                             | 2                                                                        | Yes      |
 | Src          | `data-src`          | Controls what image src loads when the image is zoomed                            | Whatever `currentSrc` was at time of zoom                                | Yes      |
+
+## Credit
+
+- Thanks @daviddarnes for the
+  [component template](https://github.com/daviddarnes/component-template)
