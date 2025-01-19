@@ -21,6 +21,14 @@ General usage example:
 </image-hover-zoom>
 ```
 
+## Installation
+
+You have a few options (choose one of these):
+
+Install via npm: npm install @daviddarnes/component-name Download the source
+manually from GitHub into your project. Skip this step and use the script
+directly via a 3rd party CDN (not recommended for production use)
+
 ## Features
 
 This web component allows you to:
@@ -38,5 +46,3 @@ This web component allows you to:
 | Label        | `data-label`        | Provides an `aria-label` on the custom element (since the element can gain focus) | Use your mouse, touch, or arrow keys to zoom in on an area of the image. | Yes      |
 | Scale        | `data-scale`        | Controls how much the image is zoomed                                             | 2                                                                        | Yes      |
 | Src          | `data-src`          | Controls what image src loads when the image is zoomed                            | Whatever `currentSrc` was at time of zoom                                | Yes      |
-
-## Credit
