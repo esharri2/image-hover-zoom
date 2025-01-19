@@ -50,5 +50,5 @@ This web component allows you to:
 
 ## Credit
 
-- Thanks (David Darnes)[https://github.com/daviddarnes] for the
+- Thanks [David Darnes](https://github.com/daviddarnes) for the
   [component template](https://github.com/daviddarnes/component-template)
