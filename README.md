@@ -37,7 +37,8 @@ This web component allows you to:
 - Make any image "zoom" on hover, touch, or focus.
 - Allow users to change zoomed area using a mouse, keyboard arrows, or touch
   gestures.
-- Easily customize the zoomed image source, the amount of zoom,
+- Easily customize the zoomed image source, the amount of zoom, the amount of
+  movement per key stroke, and the aria-label included on the component.
 
 ## Attributes
 
