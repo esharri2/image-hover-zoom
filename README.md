@@ -25,9 +25,10 @@ General usage example:
 
 You have a few options (choose one of these):
 
-Install via npm: npm install @daviddarnes/component-name Download the source
-manually from GitHub into your project. Skip this step and use the script
-directly via a 3rd party CDN (not recommended for production use)
+1. Install via npm: `npm i @esharri2/image-hover-zoom`
+1. Download the
+   [source](https://github.com/esharri2/image-hover-zoom/blob/main/image-hover-zoom.js)
+   manually from GitHub into your project.
 
 ## Features
 
