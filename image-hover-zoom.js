@@ -1,4 +1,4 @@
-class ImageHoverZoom extends HTMLElement {
+export class ImageHoverZoom extends HTMLElement {
   static register(tagName) {
     customElements.define(tagName || "image-hover-zoom", ImageHoverZoom);
   }

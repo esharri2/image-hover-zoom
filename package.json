@@ -1,8 +1,9 @@
 {
   "name": "@esharri2/image-hover-zoom",
   "version": "1.0.0",
-  "description": "A web component for adding zoom-on-hover to an image",
+  "description": "A web component for zooming an image on hover",
   "main": "image-hover-zoom.js",
+  "type": "module",
   "scripts": {
     "start": "npx http-server ."
   },
