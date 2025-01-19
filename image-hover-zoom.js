@@ -7,6 +7,7 @@ export class ImageHoverZoom extends HTMLElement {
   #pointerY = 0;
 
   connectedCallback() {
+    console.log("connected.......");
     /* Add and update Shadow DOM */
     this.frame = document.createElement("div");
     this.frame.append(document.createElement("slot"));
@@ -43,10 +44,12 @@ export class ImageHoverZoom extends HTMLElement {
 
   bindEvents() {
     this.frame.addEventListener("pointerenter", () => {
+      console.log("pointer enter..");
       this.zoom();
     });
 
     this.frame.addEventListener("pointermove", (e) => {
+      console.log("pointer move...");
       this.handlePointermove(e);
     });
 
@@ -55,24 +58,35 @@ export class ImageHoverZoom extends HTMLElement {
     });
 
     this.addEventListener("focus", () => {
+      console.log("focus...");
       this.zoom();
     });
 
     this.addEventListener("blur", () => {
+      console.log("blur...");
       this.unzoom();
     });
 
     this.addEventListener("keydown", (e) => {
+      console.log("keydown...");
       this.handleKeydown(e);
     });
 
     // Prevents scrolling on mobile
-    this.addEventListener("touchstart", this.preventDefault, {
-      passive: false,
-    });
+    this.addEventListener(
+      "touchstart",
+      (e) => {
+        console.log("touch start...");
+        e.preventDefault();
+      },
+      {
+        passive: false,
+      }
+    );
   }
 
   handlePointerenter(e) {
+    console.log("zoom!");
     this.zoom();
   }
 

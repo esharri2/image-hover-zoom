@@ -6,12 +6,6 @@
     <meta name="description" content="Demo of image-hover-zoom Web Component" />
     <title>image-hover-zoom Web Component Demo</title>
     <script type="module" src="image-hover-zoom.js"></script>
-    <style>
-      image-hover-zoom {
-        display: block;
-        margin: 0 auto;
-      }
-    </style>
   </head>
   <body>
     <h1><code>image-hover-zoom</code> Demo</h1>
@@ -50,6 +44,21 @@
           height="400"
           width="400"
         />
+      </image-hover-zoom>
+    </section>
+    <section>
+      <h2>Example using <code>picture</code> element</h2>
+      <image-hover-zoom>
+        <picture>
+          <source
+            srcset="https://picsum.photos/id/237/600/400"
+            media="(min-width: 600px)"
+          />
+          <img
+            src="https://picsum.photos/id/237/400/400"
+            alt="A black puppy looking up from the ground."
+          />
+        </picture>
       </image-hover-zoom>
     </section>
   </body>
