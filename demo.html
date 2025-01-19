@@ -6,9 +6,15 @@
     <meta name="description" content="Demo of image-hover-zoom Web Component" />
     <title>image-hover-zoom Web Component Demo</title>
     <script type="module" src="image-hover-zoom.js"></script>
+    <style>
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    </style>
   </head>
   <body>
-    <h1><code>image-hover-zoom</code> Demo (testing 1)</h1>
+    <h1><code>image-hover-zoom</code> Demo</h1>
     <section>
       <h2>Basic example</h2>
       <image-hover-zoom>
@@ -26,8 +32,8 @@
     </section>
     <section>
       <h2>
-        Example using attributes to set zoom scale to 1.5, keyboard movement
-        distance to 10, and provide a high quality src for the zoomed image
+        Example using attributes to customize zoom scale, keyboard movement
+        distance, and the zoomed image src
       </h2>
       <image-hover-zoom
         data-src="https://picsum.photos/id/237/1600/1600"
