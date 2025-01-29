@@ -42,8 +42,8 @@ export class ImageHoverZoom extends HTMLElement {
   }
 
   bindEvents() {
-    this.frame.addEventListener("pointerenter", () => {
-      this.zoom();
+    this.frame.addEventListener("pointerenter", (e) => {
+      this.handlePointerenter(e);
     });
 
     this.frame.addEventListener("pointermove", (e) => {
@@ -80,6 +80,7 @@ export class ImageHoverZoom extends HTMLElement {
 
   handlePointerenter(e) {
     this.zoom();
+    this.handlePointermove(e);
   }
 
   handlePointerleave(e) {
